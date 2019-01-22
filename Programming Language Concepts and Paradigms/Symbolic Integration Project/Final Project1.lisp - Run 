@@ -1,0 +1,111 @@
+%%% This file has been annotated. All annotations begin with %%%
+%%% Patrick Hwang
+%%% CSC 345 Project 1 - Symbolic Integration
+%%% Project1.lisp - RUN
+%%%-------------------------------------------------------------------------------
+
+; SLIME 2015-08-24; Loading #P"/home/ph905536/Documents/Project1/Project1.lisp".
+
+%%% TEST 1
+CL-USER> (integrate '1 'x)
+X
+
+
+%%% TEST 2
+CL-USER> (integrate '1 'y 1 4)
+3
+
+
+%%% TEST 3
+CL-USER> (integrate 'z 'z)
+(/ (EXPT Z 2) 2)
+
+
+%%% TEST 4
+CL-USER>  (integrate '(+ x 0) 'x)
+(/ (EXPT X 2) 2)
+
+
+%%% TEST 5
+CL-USER> (integrate '(- x) 'x 1 3)
+-4
+
+
+%%% TEST 6
+CL-USER> (integrate '(- - x) 'x 1 4)
+15/2
+
+
+%%% TEST 7
+CL-USER> (integrate '(- x) 'x)
+(- (/ (EXPT X 2) 2))
+
+
+%%% TEST 8
+CL-USER> (integrate '(- - x) 'x)
+(/ (EXPT X 2) 2)
+
+
+%%% TEST 9
+CL-USER> (integrate '(- - - x) 'x)
+(- (/ (EXPT X 2) 2))
+
+
+%%% TEST 10
+CL-USER> (integrate '(+ x (- x)) 'x)
+0
+
+
+%%% TEST 11
+CL-USER> (integrate '(- (+ (- - x) x)) 'x 1 4)
+-15
+
+
+%%% TEST 12
+CL-USER> (integrate '(+ (+ (- - x) (+ x 3)) 2) 'x 2 6)
+52
+
+
+%%% TEST 13
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (/ (EXPT X 2) 2) (/ (EXPT X 4) 4))
+
+
+%%% TEST 14
+CL-USER> (integrate '(- x (expt x 3)) 'x 2 5)	
+-567/4
+
+
+%%% TEST 15
+CL-USER> (integrate '(+ (+ x (- - - x)) (expt x 3)) 'x)
+(/ (EXPT X 4) 4)
+
+
+%%% TEST 16
+CL-USER> (integrate '(+ (- x (- x)) (expt x 3)) 'x 2 3)
+65/4
+
+
+%%% TEST 17
+CL-USER> (integrate '(expt x -1) 'x)
+(LOG X)
+
+
+%%% TEST 18
+CL-USER> (integrate '(expt x -1) 'x 3 45)	
+2.7080503
+
+
+%%% TEST 19
+CL-USER> (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x)
+(+ (+ (/ (EXPT X 2) 2) (- (* 5 X) (/ (EXPT X 2) 2))) (LOG X))
+
+
+%%% TEST 20
+CL-USER>  (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x 5 217)
+1063.7704
+
+
+%%% TEST 21
+CL-USER> (integrate '(+ x x) 'x)
+(+ (/ (EXPT X 2) 2) (/ (EXPT X 2) 2))

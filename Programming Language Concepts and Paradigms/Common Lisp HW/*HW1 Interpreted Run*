@@ -1,0 +1,158 @@
+%%% This file has been annotated. All annotations begin with %%%
+
+; SLIME 2015-08-24
+
+%%%======================================================================
+										%%% Problem 1 - SUM
+CL-USER> (trace sum)
+(SUM)
+CL-USER> (SUM 3 4)
+  0: (SUM 3 4)
+    1: (SUM 2 5)
+      2: (SUM 1 6)
+        3: (SUM 0 7)
+        3: SUM returned 7
+      2: SUM returned 7
+    1: SUM returned 7
+  0: SUM returned 7
+7
+CL-USER> (SUM 3 -4)
+  0: (SUM 3 -4)
+    1: (SUM 2 -3)
+      2: (SUM 1 -2)
+        3: (SUM 0 -1)
+        3: SUM returned -1
+      2: SUM returned -1
+    1: SUM returned -1
+  0: SUM returned -1
+-1
+CL-USER> (SUM 3 'a)
+  0: (SUM 3 A)
+  0: SUM returned NIL
+NIL
+CL-USER> (SUM 'a 4)
+  0: (SUM A 4)
+  0: SUM returned NIL
+NIL
+
+%%%=========================================================================
+												%%% Problem 2 - MY-REPLACE
+
+CL-USER> (my-replace '(a) '(x) '(a (a) (b (a))))
+(A (X) (B (X)))
+CL-USER> (my-replace '(a) '(x) '(a ((a) b (a)) b a))
+(A ((X) B (X)) B A)
+CL-USER> (my-replace 'a '(x y (z)) '(a (a b (a)) b a))
+((X Y (Z)) ((X Y (Z)) B ((X Y (Z)))) B (X Y (Z)))
+
+%%%==========================================================================
+												%%% Problem 3 - FIBONACCI
+
+CL-USER> (comparefibonaccis)
+TAIL REC FIBONACCI 10
+Evaluation took:
+  0.000 seconds of real time
+  0.000005 seconds of total run time (0.000005 user, 0.000000 system)
+  100.00% CPU
+  4,944 processor cycles
+  0 bytes consed
+  
+FIBONACCI 10
+Evaluation took:
+  0.000 seconds of real time
+  0.000012 seconds of total run time (0.000011 user, 0.000001 system)
+  100.00% CPU
+  26,864 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 15
+Evaluation took:
+  0.000 seconds of real time
+  0.000003 seconds of total run time (0.000003 user, 0.000000 system)
+  100.00% CPU
+  3,696 processor cycles
+  0 bytes consed
+  
+FIBONACCI 15
+Evaluation took:
+  0.000 seconds of real time
+  0.000069 seconds of total run time (0.000064 user, 0.000005 system)
+  100.00% CPU
+  209,232 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 20
+Evaluation took:
+  0.000 seconds of real time
+  0.000003 seconds of total run time (0.000003 user, 0.000000 system)
+  100.00% CPU
+  3,200 processor cycles
+  0 bytes consed
+  
+FIBONACCI 20
+Evaluation took:
+  0.001 seconds of real time
+  0.000747 seconds of total run time (0.000747 user, 0.000000 system)
+  100.00% CPU
+  2,373,488 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 25
+Evaluation took:
+  0.000 seconds of real time
+  0.000004 seconds of total run time (0.000004 user, 0.000000 system)
+  100.00% CPU
+  3,760 processor cycles
+  0 bytes consed
+  
+FIBONACCI 25
+Evaluation took:
+  0.005 seconds of real time
+  0.004261 seconds of total run time (0.004261 user, 0.000000 system)
+  80.00% CPU
+  13,596,384 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 30
+Evaluation took:
+  0.000 seconds of real time
+  0.000001 seconds of total run time (0.000001 user, 0.000000 system)
+  100.00% CPU
+  931 processor cycles
+  0 bytes consed
+  
+FIBONACCI 30
+Evaluation took:
+  0.020 seconds of real time
+  0.020564 seconds of total run time (0.020564 user, 0.000000 system)
+  105.00% CPU
+  65,583,104 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 35
+Evaluation took:
+  0.000 seconds of real time
+  0.000002 seconds of total run time (0.000002 user, 0.000000 system)
+  100.00% CPU
+  1,408 processor cycles
+  0 bytes consed
+  
+FIBONACCI 35
+Evaluation took:
+  0.220 seconds of real time
+  0.219618 seconds of total run time (0.219618 user, 0.000000 system)
+  100.00% CPU
+  700,108,867 processor cycles
+  82,288 bytes consed
+  
+=======================================================
+NIL
+
+%%%==========================================================================
+										
+

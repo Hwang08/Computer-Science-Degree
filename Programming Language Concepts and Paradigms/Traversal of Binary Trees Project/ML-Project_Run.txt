@@ -1,0 +1,144 @@
+%%% This file has been annotated. All annotations begin with %%%
+%%% Patrick Hwang
+%%% CSC 345
+%%% ML Project - Traversal of Binary Trees Run
+%%% ML-Project_Run.txt
+
+%%% ---------------------------------------------------------------------------
+Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
+-
+[opening /home/ph905536/Documents/CSC 345/ML-Project/test.sml]
+
+%%% ----------------------------------------------------------------------------
+[library $smlnj/smlnj-lib/controls-lib.cm is stable]
+[autoloading done]
+val it = () : unit
+val it = () : unit
+val it = () : unit
+%%% ---------------------------------------------------------------------------
+%%% Datatypes
+
+datatype X = A | B | C | D | E | F | G | H
+datatype 'a BinaryTree = empty | tree of 'a * 'a BinaryTree * 'a BinaryTree
+
+%%% ----------------------------------------------------------------------------
+%%% Traversal Functions
+val preOrder = fn : 'a BinaryTree -> 'a list
+val inOrder = fn : 'a BinaryTree -> 'a list
+val postOrder = fn : 'a BinaryTree -> 'a list
+
+%%% ---------------------------------------------------------------------------
+%%% Print Functions
+val printInt = fn : int -> unit
+val printReal = fn : real -> unit
+val printX = fn : X -> unit
+
+%%% ----------------------------------------------------------------------------
+%%% Display Functions
+val displayTree = fn : 'a BinaryTree * ('a -> 'b) -> unit
+
+%%% ---------------------------------------------------------------------------
+%%% Binary Trees
+val it = () : unit
+val t1 =
+  tree
+    (1,tree (2,tree (3,empty,empty),tree (4,empty,empty)),
+     tree (5,tree (6,empty,empty),tree (7,empty,empty))) : int BinaryTree
+val t2 =
+  tree
+    (A,tree (B,tree (D,empty,empty),tree (E,empty,empty)),
+     tree (C,tree (F,empty,empty),tree (G,empty,empty))) : X BinaryTree
+val t3 = tree (1.22,tree (2.33,empty,empty),tree (3.44,empty,empty))
+  : real BinaryTree
+val t4 =
+  tree
+    ("A",
+     tree
+       ("B",tree ("C",tree ("E",empty,empty),empty),
+        tree
+          ("D",tree ("F",empty,empty),tree ("G",tree ("H",empty,empty),empty))),
+     tree
+       ("I",
+        tree
+          ("J",empty,tree ("K",tree ("L",empty,empty),tree ("M",empty,empty))),
+        empty)) : string BinaryTree
+
+%%% ------------------------------------------------------------------------- T1
+%%% preOrder t1;
+val it = [1,2,3,4,5,6,7] : int list
+
+%%% inOrder t1;
+val it = [3,2,4,1,6,5,7] : int list
+
+%%% postOrder t1;
+val it = [3,4,2,6,7,5,1] : int list
+
+%%% displayTree(t1, printInt);
+1
+  2
+    3
+    4
+  5
+    6
+    7
+
+%%% ------------------------------------------------------------------------- T2
+%%% preOrder t2;
+val it = () : unit
+val it = [A,B,D,E,C,F,G] : X list
+
+%%% inOrder t2;
+val it = [D,B,E,A,F,C,G] : X list
+
+%%% inOrder t2;
+val it = [D,E,B,F,G,C,A] : X list
+
+%%% displayTree(t2, printX);
+A
+  B
+    D
+    E
+  C
+    F
+    G
+%%% ------------------------------------------------------------------------- T3
+%%% preOrder t3;
+val it = () : unit
+val it = [1.22,2.33,3.44] : real list
+
+%%% inOrder t3;
+val it = [2.33,1.22,3.44] : real list
+
+%%% inOrder t3;
+val it = [2.33,3.44,1.22] : real list
+
+%%% displayTree(t3, printReal);
+1.22
+  2.33
+  3.44
+
+%%% ------------------------------------------------------------------------- T4
+%%% preOrder t4;
+val it = () : unit
+val it = ["A","B","C","E","D","F","G","H","I","J","K","L","M"] : string
+
+%%% inOrder t4;
+val it = ["E","C","B","F","D","H","G","A","J","L","K","M","I"] : string list
+
+%%% postOrder t4;
+val it = ["E","C","F","H","G","D","B","L","M","K","J","I","A"] : string
+
+%%% displayTree(t4, printReal);
+A
+  B
+    C
+      E
+      -
+    D
+      F
+      G
+        H
+        -
+  I
+    J
+      -

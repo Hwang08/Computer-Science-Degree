@@ -1,0 +1,43 @@
+;; Patrick Hwang
+;; CSC 345 - Fall 2018
+;; Project 1 - Symbolic Integration
+;;
+;; Differentiate any expression (supplied as a list) with a variable (differentiate F V)
+;; Supplied function must only contain any combiination of:
+;; - Addition
+;; - Subtraction
+;; - Multiplication
+;; - Division
+;; - Exponentials
+
+(defun differentiate (F V)
+  "Main, fully abstracted differentiate function, calls accessors based on predicates defined below"
+  (cond ((constant-p F) (make-constant 0))
+	((variable-p F) (if (equal (make-variable F) (make-variable V))
+			    (make-constant 1)
+			    (make-constant 0)))
+	((negation-p F) (if (evenp (negation-p-count F)) (differentiate (last F) V) (make-negative (differentiate (negation-operand F) V))))
+	((sum-p F) (make-sum (differentiate (first-sum-operand F) V)
+			     (differentiate (second-sum-operand F) V)))
+	((difference-p F) (make-difference (differentiate (first-difference-operand F) V)
+					   (differentiate (second-difference-operand F) V)))
+	((product-p F) (make-sum (make-product (multiplicand F) (differentiate (multiplier F) V))
+				 (make-product (multiplier F) (differentiate (multiplicand F) V))))
+	((quotient-p F) (make-quotient (make-difference
+					(make-product (divisor F)
+						      (differentiate (dividend F) V))
+					(make-product (dividend F)
+						      (differentiate (divisor F) V)))
+				       (make-product (divisor F)(divisor F))))
+	((power-p F) (make-product (make-power (power-operand-1 F)(- (power-operand-2 F) 1)) (power-operand-2 F)))))
+
+;Symbols
+(defconstant constant-symbols '(A B C D E F G H M N))
+(defconstant variable-symbols '(U V W X Y Z))
+(defconstant addition-symbol '+)
+(defconstant subtraction-symbol '-)
+(defconstant multiplication-symbol '*)
+(defconstant division-symbol '/)
+(defconstant power-symbol '**)
+
+				       

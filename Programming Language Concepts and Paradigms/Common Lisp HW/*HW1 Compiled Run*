@@ -1,0 +1,121 @@
+%%% This file has been annotated. All annotations begin with %%%
+
+%%%==========================================================================
+
+; SLIME 2015-08-24
+; compiling file "/home/ph905536/Documents/Hw1/homework.lisp" (written 04 OCT 2018 02:25:00 PM):
+
+; /home/ph905536/Documents/Hw1/homework.fasl written
+; compilation finished in 0:00:00.022
+
+%%%==========================================================================
+												%%% Problem 3 - FIBONACCI
+
+
+CL-USER> (comparefibonaccis)
+TAIL REC FIBONACCI 10
+Evaluation took:
+  0.000 seconds of real time
+  0.000002 seconds of total run time (0.000002 user, 0.000000 system)
+  100.00% CPU
+  1,819 processor cycles
+  0 bytes consed
+  
+FIBONACCI 10
+Evaluation took:
+  0.000 seconds of real time
+  0.000005 seconds of total run time (0.000004 user, 0.000001 system)
+  100.00% CPU
+  9,967 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 15
+Evaluation took:
+  0.000 seconds of real time
+  0.000002 seconds of total run time (0.000001 user, 0.000001 system)
+  100.00% CPU
+  1,920 processor cycles
+  0 bytes consed
+  
+FIBONACCI 15
+Evaluation took:
+  0.000 seconds of real time
+  0.000024 seconds of total run time (0.000023 user, 0.000001 system)
+  100.00% CPU
+  73,226 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 20
+Evaluation took:
+  0.000 seconds of real time
+  0.000001 seconds of total run time (0.000001 user, 0.000000 system)
+  100.00% CPU
+  1,024 processor cycles
+  0 bytes consed
+  
+FIBONACCI 20
+Evaluation took:
+  0.000 seconds of real time
+  0.000247 seconds of total run time (0.000233 user, 0.000014 system)
+  100.00% CPU
+  783,670 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 25
+Evaluation took:
+  0.000 seconds of real time
+  0.000003 seconds of total run time (0.000002 user, 0.000001 system)
+  100.00% CPU
+  1,536 processor cycles
+  0 bytes consed
+  
+FIBONACCI 25
+Evaluation took:
+  0.002 seconds of real time
+  0.002310 seconds of total run time (0.002310 user, 0.000000 system)
+  100.00% CPU
+  7,371,263 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 30
+Evaluation took:
+  0.000 seconds of real time
+  0.000001 seconds of total run time (0.000001 user, 0.000000 system)
+  100.00% CPU
+  1,340 processor cycles
+  0 bytes consed
+  
+FIBONACCI 30
+Evaluation took:
+  0.022 seconds of real time
+  0.022506 seconds of total run time (0.022506 user, 0.000000 system)
+  104.55% CPU
+  71,853,780 processor cycles
+  0 bytes consed
+  
+=======================================================
+TAIL REC FIBONACCI 35
+Evaluation took:
+  0.000 seconds of real time
+  0.000001 seconds of total run time (0.000001 user, 0.000000 system)
+  100.00% CPU
+  1,135 processor cycles
+  0 bytes consed
+  
+FIBONACCI 35
+Evaluation took:
+  0.229 seconds of real time
+  0.229342 seconds of total run time (0.229342 user, 0.000000 system)
+  100.00% CPU
+  730,974,881 processor cycles
+  83,840 bytes consed
+  
+=======================================================
+NIL
+
+%%%==========================================================================
+											

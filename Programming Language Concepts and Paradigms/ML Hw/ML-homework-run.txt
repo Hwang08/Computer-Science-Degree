@@ -1,0 +1,58 @@
+%%% This file has been annotated. All annotations begin with %%%
+%%% Patrick Hwang
+%%% CSC 345 - ML Homework Run
+%%% ML-homework_run.sml
+%%% 11/15/18 11:30 AM
+
+
+
+%%% ----------------------------------------------------------------------------
+%%% Function Initialization
+
+Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
+- 
+[opening /tmp/emacs-region15054KwP]
+val flip = fn : 'a list -> 'a list
+val it = () : unit
+- 
+[opening /tmp/emacs-region15054oyN]
+val deleteIth = fn : 'a list * int -> 'a list
+val it = () : unit
+- 
+[opening /tmp/emacs-region1505418T]
+val piglatinize = fn : string -> string
+val it = () : unit
+
+
+
+%%% ----------------------------------------------------------------------------
+%%% Problem 3.3.2. 
+
+- flip[1,2,3,4,5,6];
+val it = [2,1,4,3,6,5] : int list
+
+- flip[1.0,2.0,3.0,4.0,5.0];
+val it = [2.0,1.0,4.0,3.0,5.0] : real list
+
+
+
+%%% ----------------------------------------------------------------------------
+%%% Problem 3.3.3.
+
+- deleteIth([1,2,3,4,5,6],3);
+val it = [1,2,4,5,6] : int list
+
+- deleteIth([1,2,3,4,5,6],7);
+val it = [1,2,3,4,5,6] : int list
+
+
+
+%%% ----------------------------------------------------------------------------
+%%% Problem 3.3.10. 
+
+- piglatinize "able";
+val it = "ableyay" : string
+
+- piglatinize "stripe";
+val it = "ipestray" : string
+

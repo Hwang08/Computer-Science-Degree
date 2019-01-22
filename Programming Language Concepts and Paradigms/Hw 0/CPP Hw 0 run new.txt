@@ -1,0 +1,14 @@
+
+
+cd '/Users/pathwang/Documents/NetBeansProjects/CPP_Hw0'
+/usr/bin/make -f Makefile CONF=Debug
+"/Applications/Xcode.app/Contents/Developer/usr/bin/make" -f nbproject/Makefile-Debug.mk QMAKE= SUBPROJECTS= .build-conf
+"/Applications/Xcode.app/Contents/Developer/usr/bin/make"  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-MacOSX/cpp_hw0
+make[2]: `dist/Debug/GNU-MacOSX/cpp_hw0' is up to date.
+
+BUILD SUCCESSFUL (total time: 109ms)
+
+45
+
+RUN FINISHED; exit value 0; real time: 10ms; user: 0ms; system: 0ms
+

@@ -1,0 +1,45 @@
+; SLIME 2015-08-24; Loading #P"/home/ph905536/Documents/Project1/Project1.lisp".
+
+CL-USER> (integrate '1 'x)
+X
+CL-USER> (integrate '1 'y 1 4)
+3
+CL-USER> (integrate 'z 'z)
+(/ (EXPT Z 2) 2)
+CL-USER>  (integrate '(+ x 0) 'x)
+(/ (EXPT X 2) 2)
+CL-USER> (integrate '(- x) 'x 1 3)
+-4
+CL-USER> (integrate '(- - x) 'x 1 4)
+15/2
+CL-USER> (integrate '(- x) 'x)
+(- (/ (EXPT X 2) 2))
+CL-USER> (integrate '(- - x) 'x)
+(/ (EXPT X 2) 2)
+CL-USER> (integrate '(- - - x) 'x)
+(- (/ (EXPT X 2) 2))
+CL-USER> (integrate '(+ x (- x)) 'x)
+0
+CL-USER> (integrate '(- (+ (- - x) x)) 'x 1 4)
+-15
+CL-USER> (integrate '(+ (+ (- - x) (+ x 3)) 2) 'x 2 6)
+52
+CL-USER> (integrate '(- x (expt x 3)) 'x)
+(- (/ (EXPT X 2) 2) (/ (EXPT X 4) 4))
+CL-USER> (integrate '(- x (expt x 3)) 'x 2 5)	
+-567/4
+CL-USER> (integrate '(+ (+ x (- - - x)) (expt x 3)) 'x)
+(/ (EXPT X 4) 4)
+CL-USER> (integrate '(+ (- x (- x)) (expt x 3)) 'x 2 3)
+65/4
+CL-USER> (integrate '(expt x -1) 'x)
+(LOG X)
+CL-USER> (integrate '(expt x -1) 'x 3 45)	
+2.7080503
+CL-USER> (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x)
+(+ (+ (/ (EXPT X 2) 2) (- (* 5 X) (/ (EXPT X 2) 2))) (LOG X))
+CL-USER> integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x 5 217)
+; Evaluation aborted on #<UNBOUND-VARIABLE {582966FD}>.
+CL-USER>  (integrate '(+ (+ x (- 5 x)) (expt x -1)) 'x 5 217)
+1063.7704
+CL-USER> 

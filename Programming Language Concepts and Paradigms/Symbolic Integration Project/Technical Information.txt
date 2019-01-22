@@ -1,0 +1,34 @@
+Patrick Hwang                                                           10/29/18 6:46 PM
+CSC 345
+Project 1 - Symbolic Integration
+Technical Information for Project1.lisp
+
+
+All files for Project 1 including test-data.lisp are located in: /home/ph905536/Documents/Project1
+
+File Location:  /home/ph905536/Documents/Project1/Project1.lisp
+
+How to Run Project1.lisp: 
+
+1) Open emacs GUI
+2) Open slime buffer: M(meta key)- x , then type slime, press enter key
+3) Open project1.lisp
+a. Click the other buffer that does not have ÒCL-USER>Ó.
+b. Click file then open then search for Project1.lisp and open it.
+4) Once project1.lisp is opened click it and then click the f11 key to load the file into the Slime buffer.
+5) Then open the test-data.lisp in a text editor.
+6) In the slime buffer where you see CL-USER> copy and paste each line of the test data code after CL-USER> ÒhereÓ, then hit enter to evaluate the test data.
+
+7) Example:
+
+CL-USER> (integrate '1 'x)
+X
+       CL-USER> (integrate '1 'y 1 4)
+3
+CL-USER> (integrate 'z 'z)
+(/ (EXPT Z 2) 2)
+
+8) The evaluated answer will be returned on the line after CL-USER> , Do this until you have evaluated all of the test cases.
+
+
+
